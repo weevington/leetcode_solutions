@@ -1,0 +1,94 @@
+*#
+*.bak
+*~
+#*#
+*DS_store*
+*.swp*
+*.swo*
+*.swq
+
+# backup files ending in ~
+*~
+*.sw*
+.DS_Store*
+*.aux*
+*.log*
+*.lof*
+*.lot*
+*.out*
+*.gz
+*.toc*
+*.bbl
+*.blg
+*~
+*.nlo
+*make
+*.d
+*.btmp
+*.fls
+*.glo
+*.idx
+*.ist
+*.ilg
+*.ind
+*cookie*
+*#*
+*.nls
+*.nlg
+*.dvi
+*.ps
+*.eps
+*.pdf*
+*.core*
+
+# default C++ binary output
+a.out
+
+# compressed files
+*.tar
+*.tar.gz
+*.gzip
+*.zip
+# 7zip
+*.7z
+*.rar
+
+# image files
+*.jpg
+*.jpeg
+*.png
+
+# mac metadata file that stores custom attributes of its containing folder
+.DS_Store
+
+# ignore vim swap files
+*.swp
+*.swo
+# ignore any vim run control files
+*vimrc*
+
+# Eclipse Core      
+*.project
+*.projectfile
+
+# JDT-specific (Eclipse Java Development Tools)     
+.classpath
+
+# any more Java-related files/target/
+/.classpath
+/*.project
+/.settings
+/*.springBeans
+/target/
+/.classpath
+/*.project
+/.settings
+/*.springBeans
+
+# ignore emacs-style backup files 
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+auto-save-list
+.\#*
+
