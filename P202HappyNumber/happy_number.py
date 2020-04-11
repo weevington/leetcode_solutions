@@ -4,12 +4,12 @@ class Solution:
         Parameters
         ----------
         n : [int]
-        Input integer.
+            Input integer.
 
         Returns
         -------
-        happy: bool
-        True if the number is a "happy" number.
+        happy : bool
+            True if the number is a "happy" number.
         """
         happy = False
 
