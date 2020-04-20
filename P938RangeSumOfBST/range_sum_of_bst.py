@@ -12,6 +12,8 @@ class Solution:
      
     The binary search tree is guaranteed to have unique values.
 
+    This method is a recursive approach.
+
     Parameters
     ----------
     root : TreeNode
@@ -25,8 +27,6 @@ class Solution:
     --------
     Input: root = [10,5,15,3,7,null,18], L = 7, R = 15
     Output: 32
-
-    
     """
     def rangeSumBST(self, root: TreeNode, L: int, R: int) -> int:
         if root is None:

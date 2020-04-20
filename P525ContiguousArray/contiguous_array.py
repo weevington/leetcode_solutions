@@ -37,3 +37,4 @@ class Solution:
                         contiguous_len = max(contiguous_len, idx_diff)
         
         return contiguous_len
+
