@@ -53,11 +53,15 @@ class Solution:
         """
         Merges two sorted linked lists into a single sorted list.
 
-        This is a shorter solution than the above. If either of the 
-        lists is None, return the pointer to that list. Create a 
-        dummy node which serves as a handle to the first node of
-        the resulting list. Set the dummy node's next pointer to 
-        the first list of the value of the head no 
+        This is a shorter solution than the above. It uses an iterative 
+        approach (as opposed to a recursive approach). If either of the lists
+        is None, return the pointer to that list. Create a dummy node which 
+        serves as a handle to the first node of the resulting list. Set the 
+        dummy node's next pointer to the current head of the first list if the 
+        value of the head node of the first list is less than or equal to the
+        value of the second list. Advanced the pointer to the current node 
+        of the first list and advance the pointer to the current node of the
+        resulting list.
 
         Parameters
         ----------
