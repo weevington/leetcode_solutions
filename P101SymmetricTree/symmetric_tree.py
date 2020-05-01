@@ -38,6 +38,7 @@ class Solution:
             2   2
              \   \
              3    3
+    Output : True
     
     Input : [1,2,2,5,null,null,5]
               1
