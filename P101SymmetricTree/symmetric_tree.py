@@ -20,7 +20,7 @@ class Solution:
     Returns
     -------
     is_symmetric : bool
-        Whether the binary tree is symmetric or not
+        Whether the binary tree is symmetric or not.
 
     Examples
     --------
@@ -40,7 +40,7 @@ class Solution:
              3    3
     Output : True
     
-    Input : [1,2,2,5,null,null,5]
+    Input : [1,17,17,5,null,null,5]
               1
              / \
            17   17
