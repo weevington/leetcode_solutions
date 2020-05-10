@@ -5,11 +5,17 @@ class Solution:
         while maintaining the relative order of the non-zero elements.
         
         Parameters
-        -----------
+        ----------
         nums : List[int]
             Array containing natural numbers
-
         
+        Examples
+        --------
+        Input: [0,1,0,3,12]
+        Output: [1,3,12,0,0]
+
+        Input: [0, 0]
+        Output: [0, 0]
         """
         def find_non_zero(a: List[int], k: int, nl: int) -> int:
             non_zero_index = -1 
@@ -33,6 +39,10 @@ class Solution:
 
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
+        """
+        
+
+        """
         pos = 0
 
         for i in range(len(nums)):
