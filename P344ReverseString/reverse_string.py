@@ -8,8 +8,10 @@ class Solution:
         This approach uses two pointers (not literal pointers in the 
         C/C++ sense), one for the front (lo), and one that iterates 
         from the end (hi). The characters at positions lo and hi are
-        swapped and . The running time is O(n) and the space complexity
-        is constant O(1).
+        swapped, the lo pointer is incremeneted to the next character,
+        while the hi pointer is decremented to the character before the
+        current hi position. The time complexity is O(n) and the space
+        complexity is constant O(1).
         
         Consider the example "hello, world". 
 
