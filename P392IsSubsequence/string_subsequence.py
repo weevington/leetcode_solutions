@@ -91,6 +91,8 @@ class Solution:
         The run-time complexity of this solution is O(m * n) where m and n are
         mentioned above.
 
+        The space complexity of this solution is also O(m * m).
+
 
         Parameters
         ----------
@@ -110,10 +112,13 @@ class Solution:
         Output: True
 
         Input: s = "axc", t = "ahbgdc"
-        Output: false
+        Output: False
 
         Input: s = "goodu", t = "goodburger"
-        Output: True 
+        Output: True
+
+        Input: s = "goody", t = "goodburger"
+        Output: False
         """
         # base case of a blank string for s, this is defined to be True
         if not s:
