@@ -11,10 +11,11 @@ class Solution:
         The base case of an empty string s is defined to be True.
 
         This uses a dynamic programming approach to solve the problem. A matrix
-        is constructed which compares. The matrix is of dimensions m * n, where
-        m is the length of the first string argument plus one, s, and t is the 
-        length of the second string argument t plus one. The matrix is 
-        constructed as follows for the example s = "abc", t = "ahbgdc":
+        is constructed which compares the two strings s and t character by
+        character. The matrix is of dimensions m * n, where m is the length of
+        the first string argument plus one, s, and t is the length of the 
+        second string argument t plus one. The matrix is constructed as follows
+        for the example s = "abc", t = "ahbgdc":
         
         The matrix is initially set to all zeroes. 
 
@@ -63,7 +64,7 @@ class Solution:
         in the previous column and same row, i.e. 
         dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
 
-                                       j=3        
+                                        j=3        
                                 a   h   b   g   d   c   
                             0   0   0   0   0   0   0
          
@@ -98,7 +99,6 @@ class Solution:
         ----------
         s : str
             Input string to be checked if it is subsequence of second string.
-        
         t : str
 
         Returns
