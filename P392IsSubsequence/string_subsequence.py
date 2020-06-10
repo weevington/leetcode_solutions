@@ -28,25 +28,34 @@ class Solution:
         
                         c   0    0   0   0   0   0   0
 
-        Starting from index 1 Loop over the rows of the matrix, then the 
+        Starting from index 1, loop over the rows of the matrix, then the 
         columns.
 
-                                j=1 .. ..
+                                j=1 ...  
                                 a   h   b   g   d   c   
                             0   0   0   0   0   0   0
          
                     i=1 a   0   1   0   0   0   0   0
+                    
+                    ... b   0   0   0   0   0   0   0 
+
+                    ... c   0   0   0   0   0   0   0
         
-                ..      b   0   0   0   0   0   0   0 
-        
-                ..      c   0   0   0   0   0   0   0
-        
-        Because we have padded the matrix with an extra, row and column of 
+        Because we have padded the matrix with an extra row and column of 
         zeroes, we must refer to the string elements with an offset of 1. If 
-        character s[i - 1] is equal to the t[j - 1] (in the above example, 
-        i = 1 and j = 1, referring to s[0] and ), we add one to the length
-        of the longest common sub-sequence, i.e if s[i - 1] == t[j - 1], then
-        dp[i][j] = 1 + dp[i - 1][j - 1]
+        character s[i - 1] is equal to the t[j - 1]. In the above example, we 
+        are asking whether a from string s is a subsequence of the substring
+        "a" from t. This is true, "a" from s is a subsequence of "a" from t.
+        Here, i = 1 and j = 1, referring to elements s[0] and t[0]. We add one 
+        to the length of the longest common sub-sequence, in this case. More
+        generally, if s[i - 1] == t[j - 1], 
+        then dp[i][j] = 1 + dp[i - 1][j - 1].
+        
+        Now we compare s[0] and t[1]. These elements are not equal. In general,
+        if s[i - 1] != t[j - 1], then the longest common subsequence becomes
+        the max of the element in the previous row and same column, or the 
+        element in the previous column and same row, i.e. 
+        dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
 
                                     j=2
                                 a   h   b   g   d   c   
@@ -57,12 +66,29 @@ class Solution:
                         b   0   0   0   0   0   0   0
         
                         c   0   0   0   0   0   0   0
+
+                                    j=2
+                                a   h   b   g   d   c   
+                            0   0   0   0   0   0   0
+         
+                    i=1 a   0   1   1   0   0   0   0  
         
-        Now we compare s[0] and j[1]. These are not equal. In general, if
-        s[i - 1] != t[j - 1], then the longest common subsequence becomes the
-        max of the element in the previous row and same column, or the element
-        in the previous column and same row, i.e. 
-        dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
+                        b   0   0   0   0   0   0   0
+        
+                        c   0   0   0   0   0   0   0
+            
+            The remainder of the elements in row i = 1 are set to 1 in for this
+            case. Now, when i = 2, we have
+
+                                    j=2
+                                a   h   b   g   d   c   
+                            0   0   0   0   0   0   0
+         
+                        a   0   1   1   1   1   1   1  
+        
+                    i=2 b   0   1   1   0   0   0   0
+        
+                        c   0   0   0   0   0   0   0
 
                                         j=3        
                                 a   h   b   g   d   c   
@@ -73,6 +99,10 @@ class Solution:
                     i=2 b   0   1   1   2   0   0   0
         
                         c   0   0   0   0   0   0   0
+        
+                                      ...
+                                      ...
+                                      ...
 
         The final matrix becomes:
 
@@ -92,8 +122,8 @@ class Solution:
         The run-time complexity of this solution is O(m * n) where m and n are
         mentioned above.
 
-        The space complexity of this solution is also O(m * m).
-
+        The space complexity of this solution is also O(m * m), the space 
+        required to store the elements of the dp matrix.
 
         Parameters
         ----------
