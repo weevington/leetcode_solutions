@@ -26,7 +26,8 @@ class Solution:
         case the target is 5, which is greater than nums[mid] (value of 3, 
         at index 1). If nums[mid] is less than target, we set lo to mid + 1 and
         repeat. If nums[mid] is greater than target, then we must move high 
-        down. The sequence proceeds while low is less than or equal to high.
+        down to mid - 1. The sequence proceeds while low is less than or equal
+        to high.
 
                                 index  0    1    2    3
                                       [1,   3,   5,   6]
@@ -113,6 +114,6 @@ class Solution:
             elif target > nums[mid]:
                 lo = mid + 1
         
-        # if we still have not found the target and the while loop terminates
+        # If we still have not found the target and the while loop terminates
         # and lo > hi and hi == mid, then just return lo
         return lo
