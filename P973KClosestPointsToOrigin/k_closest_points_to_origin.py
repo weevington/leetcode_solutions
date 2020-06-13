@@ -9,7 +9,9 @@ class Solution:
 
     The answer is returned without any particular order.
 
-    The input may be sorted according to distance, but the
+    The input may be sorted according to distance, but the time complexity of
+    such a solution is O(n * log(n)), where n is the number of points given in
+    the input list.
 
     An alternative approach is to use a max heap of K elements. A max heap will 
     keep the elements sorted in a particular order such that the largest of the
