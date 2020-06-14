@@ -58,6 +58,8 @@ public:
      * Output : true
      */
     bool detectCapitalUse(string word) {
+        // If there is only one character in the string, it is considered to be
+        // correctly capitalized
         if (word.length() < 2) {
             return true;
         }
@@ -72,13 +74,13 @@ public:
         // 3 bools are set, just for clarity
         // These are not necessary, and all of this can be done in a single
         // return statement.
-        // determine if all the letters in the string are lower case
+        // Determine if all the letters in the string are lower case
         bool all_lower = num_upper_case == 0;
 
-        // determine if only the first letter in the string is upper case
+        // Determine if only the first letter in the string is upper case
         bool first_upper_only =  (num_upper_case == 1) && (std::isupper(word[0]));
         
-        // determine if all characters in the string are upper case
+        // Determine if all characters in the string are upper case
         bool all_upper = num_upper_case == word.length();
         
         return all_lower || first_upper_only || all_upper;

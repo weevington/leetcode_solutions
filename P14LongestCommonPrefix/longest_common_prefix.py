@@ -10,6 +10,58 @@ class Solution:
     given index, a flag is set to add to the longest common prefix. If not
     the loop breaks and an empty string is returned.
 
+    Consider the example ["flower","flow","flight"]
+
+    The longest the prefix could be is the length of the shortest string, in
+    this case len("flow") = 4. This is the outer loop of our function. In this
+    case i goes from 0 to 3. 
+    
+    i = 0:
+    "flower"
+     i
+    "flow"
+     k = 0
+    "flight"
+     k = 1
+
+    The letters are common at the current position of i (0). We check the 
+    second and third strings at position i = 0, and since they are all equal
+    to f, we increment the length of the longest common prefix.
+
+    For i = 1, we have:
+    i = 1:
+    "flower"
+      i
+    "flow"
+      k = 0
+    "flight"
+      k = 1
+    
+    Looping over the remaining strings, we see that the character at position
+    i in the first string "l" is equal to the characters at position i in the
+    second and third strings, we increment the longest common prefix.
+    
+    i = 2:
+    "flower"
+       i
+    "flow"
+       k
+    "flight"
+       k
+    
+    Now the character in the first string at position i = 2 is 'o'. While this
+    is equal to the character at position i = 2 in the second string ('o' in 
+    "flow"), this is not equal to the character at position i = 2 in the third
+    string. Therefore, we do not increment the longest common prefix and we
+    break from the loop, since the prefix must be continuous and cannot have
+    breaks or gaps in the letters which make up the word.
+
+    The time complexity is O(l * n), where l is the length of the shortest word
+    in the list, and n is the number of words. 
+
+    Space complexity is O(l), where l is the length of the shortest word. The
+    longest common prefix cannot be longer than the shortest word in the list.
+
     Parameters
     ----------
     strs : List[str]
@@ -23,8 +75,8 @@ class Solution:
     
     Examples
     --------
-    Input: ["flower","flow","flight"]
-    Output: "fl"
+    Input : ["flower","flow","flight"]
+    Output : "fl"
 
     Input: ["dog","racecar","car"]
     Output: ""
