@@ -25,8 +25,9 @@ class Solution:
      k = 1
 
     The letters are common at the current position of i (0). We check the 
-    second and third strings at position i = 0, and since they are all equal
-    to f, we increment the length of the longest common prefix.
+    second and third strings at position i = 0, i.e. strs[k][i], and since 
+    they are all equal to 'f', we increment the length of the longest common
+    prefix.
 
     For i = 1, we have:
     i = 1:
@@ -86,13 +87,13 @@ class Solution:
         min_len = min([len(q) for q in strs]) if len(strs) else 0
         
         common_prefix = ""
-        for j in range(min_len):
+        for i in range(min_len):
             common_letter = True
             for k in range(len(strs)):
-                if k > 0 and strs[k][j] != strs[0][j]:
+                if k > 0 and strs[k][i] != strs[0][i]:
                     common_letter = False
             if common_letter:
-                common_prefix += strs[0][j]
+                common_prefix += strs[0][i]
             else:
                 break
 
