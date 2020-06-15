@@ -47,7 +47,8 @@ class Solution:
         general, if s[lo] is not equal to s[hi], we build the two different 
         substrings strings out of the original string, one without s[lo] and 
         one without s[hi]. We test each of these new substrings to see if 
-        either one is a palindrome, in which case we return True.
+        either one is a palindrome, in which case we return True, otherwise
+        we return False.
 
         Parameters
         ----------
