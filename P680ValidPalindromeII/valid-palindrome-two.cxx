@@ -66,8 +66,7 @@ public:
      * we return False. 
      */
     bool validPalindrome(const std::string& s) {
-        size_t s_len = s.length();
-        
+        const size_t s_len = s.length();
         if (!s_len) {
             return true;
         }
